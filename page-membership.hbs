@@ -1,0 +1,35 @@
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+{{#if @labs.members}}
+
+  <div class="container wrapper">
+    {{> site-hero wide_img=true}}
+    
+    <div class="checkout">
+      <div class="row">
+        {{#if @member.paid}}
+          {{!-- Not logged in: Redirect to signin --}}
+          <script>window.location = '{{@site.url}}/account/';</script>
+        {{else}}
+          {{#unless @member}}
+            <div class="col-xs-12 col-md-4 m-b-lg">
+              {{> pricing/free}}
+            </div>
+          {{/unless}}
+
+          <div class="col-xs-12 col-md-4{{#if @member}} col-md-offset-2{{/if}} m-b-lg">
+            {{> pricing/monthly}}
+          </div>
+          
+          <div class="col-xs-12 col-md-4 m-b-lg">
+            {{> pricing/yearly}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+{{/if}}
+{{/post}}

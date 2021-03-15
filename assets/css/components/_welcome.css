@@ -1,0 +1,66 @@
+.welcome {
+  background-color: var(--color-brand);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--global-radius);
+  color: var(--color-light);
+  min-height: 200px;
+  flex-direction: column;
+
+  @media (--mq-md) {
+    flex-direction: row;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    margin-bottom: var(--gap-sm);
+  }
+
+  &__profile {
+    position: relative;
+    margin-bottom: var(--gap);
+    border-radius: var(--global-radius-round);
+    overflow: hidden;
+
+    @media (--mq-md) {
+      margin-bottom: 0;
+      margin-right: var(--gap-lg);
+    }
+  
+    img {
+      display: block;
+      width: 120px;
+      height: 120px;    
+      object-fit: cover;
+      object-position: center center;
+      background-color: rgba(255,255,255,0.25);
+      border: 3px solid hsla(0,0%,100%,.25);
+      border-radius: inherit;
+      z-index: 2;
+      position: relative;
+      transition: all var(--trans-default);
+    }
+
+    span {
+      position: absolute;
+      text-transform: uppercase;
+      font-size: 4.6rem;
+    }
+  }
+
+  a.welcome__profile {
+    @mixin attention {
+      img {
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 35em;
+    text-align: center;
+
+    @media (--mq-md) {
+      text-align: left;
+    }
+  }
+}
