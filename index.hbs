@@ -4,18 +4,28 @@
   {{!-- Subscribe --}}
   {{> welcome}}
 
+  {{!-- Featured posts --}}
+  {{> featured}}
+
   {{!-- Filter --}}
   {{> filter-bar}}
 
   {{!-- Posts --}}
-  <div class="grid post-feed js-post-feed">
-    {{#foreach posts}}
-      {{> post-card show_img=true }}
-    {{/foreach}}
+  <div class="row">
+    <div class="col-xs-12 col-lg-8 col-xl-9 m-b-lg">
+      <div class="grid post-feed js-post-feed">
+        {{#foreach posts}}
+          {{> post-card show_img=true }}
+        {{/foreach}}
+      </div>
+    </div>
+    <div class="col-xs-12 col-lg-4 col-xl-3">
+      {{> sidebar }}
+    </div>
   </div>
 
   {{!-- Load more posts --}}
-  <div class="col-xs-12 center-xs m-t-lg">
+  <div class="col-xs-12 center-xs">
     <button class="btn btn--wide btn--rounded btn--shadow btn--brand js-load-more">
       {{t "Load more posts"}}
     </button>
@@ -28,18 +38,6 @@
       {{#foreach tags}}
         <div class="col-xs-12 col-md-6 col-xl-3 m-b-lg">
           {{> tag-card show_img=true class="h-100"}}
-        </div>
-      {{/foreach}}
-    </div>
-  {{/get}}
-
-  {{!-- Authors --}}
-  {{#get "authors" include="count.posts" order="count.posts desc" limit="6"}}
-    <div class="section__title m-t m-b">{{t "Authors"}}</div>
-    <div class="row">
-      {{#foreach authors}}
-        <div class="col-xs-12 col-md-6 col-xl-4 m-b-lg">
-          {{> author-card type="mini" mini=true}}
         </div>
       {{/foreach}}
     </div>
