@@ -29,7 +29,7 @@
     {{>icon name="copy" size="sm"}}
   </button>
   <button class="handle-bookmark js-handle-bookmark" tabindex="0" 
-      data-id="{{id}}" data-url="{{url absolute='true'}}" data-title="{{title}}"
+      data-id="{{comment_id}}" data-url="{{url absolute='true'}}" data-title="{{title}}"
       title="{{t "Bookmark"}}" data-label="" aria-label="{{t "Bookmark"}}">
     {{>icon name="bookmark" size="sm"}}
   </button>
@@ -45,7 +45,7 @@
       }
     }
     let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-    let bookmarked = bookmarks.some(function(i) { return i.id.includes('{{id}}')});
+    let bookmarked = bookmarks.some(function(i) { return i.id.includes('{{comment_id}}')});
     bookmarked ? bookmarkBtn.classList.add('is-saved') : '';
 
     /** 

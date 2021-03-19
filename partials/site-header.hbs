@@ -54,32 +54,28 @@
         {{> announcement}}
 
         {{!-- Sign up Button --}}
-        {{#if @labs.members}}
-          {{#if @member.paid}}
-          {{else if @member}}
-            {{#link class="upgrade-link" href="/membership/"}}{{t "Upgrade"}}{{/link}}
-          {{else}}
-            {{#link class="signin-link" href="/signin/"}}{{t "Sign in"}}{{/link}}
-            {{#link class="signup-link header-cta" href="/signup/"}}{{t "Sign up"}}{{/link}}
-          {{/if}}
+        {{#if @member.paid}}
+        {{else if @member}}
+          {{#link class="upgrade-link" href="/membership/"}}{{t "Upgrade"}}{{/link}}
+        {{else}}
+          {{#link class="signin-link" href="/signin/"}}{{t "Sign in"}}{{/link}}
+          {{#link class="signup-link header-cta" href="/signup/"}}{{t "Sign up"}}{{/link}}
         {{/if}}
 
         {{!-- User Menu on Mobile --}}
-        {{#if @labs.members}}
-          <button class="header__user flex-cc m-l-sm js-member-btn{{#if @member}} member{{else}} non-member{{/if}}" 
-              title="{{#if @member}}{{customer.name}}{{else}}{{t "Menu"}}{{/if}}" 
-              aria-label="{{#if @member}}{{customer.name}}{{else}}{{t "Menu"}}{{/if}}">
-            {{#if @member}}
-              <img class="header__user-avatar" 
-                src="{{@member.avatar_image}}"
-                alt="{{@member.name}}"/>
-                <span class="name-letter">{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</span>
-            {{else}}
-              {{>icon name="user" size="sm"}}
-            {{/if}}
-          </button>
-          {{> site-user-menu}}
-        {{/if}}
+        <button class="header__user flex-cc m-l-sm js-member-btn{{#if @member}} member{{else}} non-member{{/if}}" 
+            title="{{#if @member}}{{customer.name}}{{else}}{{t "Menu"}}{{/if}}" 
+            aria-label="{{#if @member}}{{customer.name}}{{else}}{{t "Menu"}}{{/if}}">
+          {{#if @member}}
+            <img class="header__user-avatar" 
+              src="{{@member.avatar_image}}"
+              alt="{{@member.name}}"/>
+              <span class="name-letter">{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</span>
+          {{else}}
+            {{>icon name="user" size="sm"}}
+          {{/if}}
+        </button>
+        {{> site-user-menu}}
       </div>
     </div>
   </div>

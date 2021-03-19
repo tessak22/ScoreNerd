@@ -42,8 +42,16 @@
 .post-sneak-peek {
   position: relative;
   user-select: none;
-  opacity: .65;
-  filter: blur(5px);
+
+  &.fading:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 80%;
+    background: linear-gradient(transparent, var(--color-bg-body) 85%);
+  }
 }
 
 .post-access-cta {

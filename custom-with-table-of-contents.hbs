@@ -15,10 +15,11 @@
             {{custom_excerpt}}
           </p>
         {{/if}}
+
         {{#if access}}
           {{content}}
         {{else}}
-          {{> post-access-cta visibility=visibility}}
+          {{> content-cta fading=true}}
         {{/if}}
       </div>
     </article>

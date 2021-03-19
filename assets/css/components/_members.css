@@ -111,6 +111,11 @@
         font-size: 2.2rem;
         font-weight: var(--font-weight-600);
       }
+
+      span {
+        text-transform: uppercase;
+        font-weight: var(--font-weight-500);
+      }
     }
 
     li {

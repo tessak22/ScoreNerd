@@ -1,11 +1,14 @@
 <script>
   // Basic Config
   let CONFIG = {
-    /* Replace it with your domain: ghost_host: 'https://yourwebsite.domain' */
-    GHOST_URL: 'http://scorenerd.com', 
+    /* Replace it with your domain: ghost_host: 'https://yoursite.domain' */
+    GHOST_URL: 'http://localhost:3368', 
     
     /* Settings > Integrations > New Custom Integration. Copy Key. Replace GHOST_KEY below. */
-    GHOST_KEY: 'f84e839f56a4dfe34f717ef9b2', 
+    GHOST_KEY: '55a4116f266aa7f13f51a90d72', 
+
+    /* Ghost version: v4 or v3 */
+    GHOST_VERSION: 'v4',
 
     /* Search result limit */
     GHOST_SEARCH_LIMIT: 8,
@@ -17,10 +20,10 @@
     DEFAULT_GRID_COLUMNS: 3,
 
     /* Default Color Scheme. Values: preference(detects user setting), light, dark. */
-    DEFAULT_COLOR_SCHEME: 'light',
+    DEFAULT_COLOR_SCHEME: 'preference',
 
     /* Enable Color cheme picker */
-    ENABLE_COLOR_SCHEME_PICKER: false,
+    ENABLE_COLOR_SCHEME_PICKER: true,
 
     /* Enable lightbox for post images */
     ENABLE_IMAGE_LIGHTBOX: true,
@@ -41,13 +44,13 @@
     ENABLE_STICKY_HEADER: true,
 
     /* Replace 'biron-demo' with your disqus account shortname */
-    DISQUS_SHORTNAME: 'tessak22',
+    DISQUS_SHORTNAME: 'biron-demo',
 
     /* To use Cove, replace the below id with your cove publication id*/
-    COVE_ID: '917b1657e6331f7ee160f65637e1fa53',
+    COVE_ID: '9a56f94608ec8169ab6bb801d004f591',
 
     /* Open external links in posts in a new tab */
-    OPEN_LINKS_IN_NEW_TAB: true
+    OPEN_LINKS_IN_NEW_TAB: false
   }
 
   // Color schemes, you can either modify the existing ones or add new ones

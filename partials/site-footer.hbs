@@ -2,24 +2,22 @@
 <footer class="footer">
   <div class="container wrapper">
     {{!-- Footer subscription --}}
-    {{#if @labs.members}}
-      {{#unless @member}}
-        <div class="footer__sub p-t-xl p-b-xl border-bottom-1">
-          <div class="row">
-            <div class="col-xs-12 col-md-6 footer__sub-text">
-              <h3 class="m-b-0">{{t "Ready to improve your score?"}}</h3>
-              <div>{{t "Subscribe to get access to premium content in your inbox or work with us to help you improve your credit."}}</div>
-            </div>
-            <div class="col-xs-12 col-md-6">
-              <div class="flex footer__sub-action">
-                <a href="/membership/" class="btn btn--brand btn--rounded m-r">{{t "Subscribe"}}</a>
-                <a href="/credit-improvement/" class="btn btn--bordered btn--rounded">{{t "Improve My Credit"}}</a>
-              </div>
+    {{#unless @member}}
+      <div class="footer__sub p-t-xl p-b-xl border-bottom-1">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 footer__sub-text">
+            <h3 class="m-b-0">{{t "Ready to get started now?"}}</h3>
+            <div>{{t "Subscribe to get access to premium content or contact us if you have any questions."}}</div>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            <div class="flex footer__sub-action">
+              <a href="/membership/" class="btn btn--brand btn--rounded m-r">{{t "Subscribe"}}</a>
+              <a href="/contact/" class="btn btn--bordered btn--rounded">{{t "Contact us"}}</a>
             </div>
           </div>
         </div>
-      {{/unless}}
-    {{/if}}
+      </div>
+    {{/unless}}
 
     {{!-- Footer top --}}
     <div class="footer__top p-t-lg p-b border-bottom-1 text-acc-1">
@@ -57,6 +55,7 @@
     {{!-- Footer Bottom --}}
     <div class="footer__bottom text-center">
       <span>&copy;{{date format="YYYY"}}&nbsp;<a href="{{@site.url}}">{{@site.title}}</a>.</span>
+      <span>{{t "Published with"}}&nbsp;<a href="https://ghost.org">Ghost</a> &&nbsp;<a href="https://bironthemes.com/themes/dashi-ghost/">Dashi</a>.</span>
     </div>
   </div>
 </footer>

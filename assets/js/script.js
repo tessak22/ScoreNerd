@@ -11,7 +11,7 @@ const handleSearch = () => {
   let ghostSearch = new GhostSearch({
     key: CONFIG.GHOST_KEY,
     url: CONFIG.GHOST_URL,
-    version: 'v3',
+    version: CONFIG.GHOST_VERSION,
     // button: '#search-button',
     template: function(result) {
       let postImage = '';
@@ -496,7 +496,7 @@ const getApi = () => {
     const ghostAPI = new GhostContentAPI({
       url: CONFIG.GHOST_URL,
       key: CONFIG.GHOST_KEY,
-      version: 'v3'
+      version: CONFIG.GHOST_VERSION
     });
 
     GLOBAL.API = ghostAPI;

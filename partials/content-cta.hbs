@@ -1,8 +1,9 @@
-{{!-- Post Access CTA --}}
-<div class="post-sneak-peek">
-  <p aria-hidden="true">This post is for subscribers only. You don't have access to this post, but if you can subscribe and you'll be able to access this post, as well as other premium content!</p>
-  <p aria-hidden="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget augue quam. Suspendisse feugiat eros dapibus, auctor nulla eu, ultrices nibh. Aliquam felis justo, laoreet non sapien sit amet, vestibulum auctor est. Curabitur ultrices orci libero. Donec ac sem ac nisi vulputate condimentum. Aliquam felis justo, laoreet non sapien sit amet. </p>
+{{!-- Content preview --}}
+<div class="post-sneak-peek{{#if fading}} fading{{/if}}">
+  {{{html}}}
 </div>
+
+{{!-- Post Access CTA --}}
 <div class="post-access-cta p-lg text-center {{visibility}}">
   <h3>{{t "Read the full story"}}</h3>
   {{!-- <p class="text-acc-3">{{t "Sign up now to read the full story and get access to all members-only posts."}}</p> --}}

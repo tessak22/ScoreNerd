@@ -38,10 +38,8 @@
 
     {{!-- Post Card details  --}}
     <div class="post-card__details flex items-center m-b">
-      {{#if @labs.members}}
-        <span class="visibility m-r">{{visibility}}</span>
-        <span class="m-r fw-400">&ndash;</span>
-      {{/if}}
+      <span class="visibility m-r">{{visibility}}</span>
+      <span class="m-r fw-400">&ndash;</span>
       <span class="read-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
       {{#if featured}}
         <span class="featured m-l">{{> icon name="star" size="xs" }}</span>

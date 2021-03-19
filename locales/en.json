@@ -2,6 +2,7 @@
   "Actions________________________________________________________________": "",
   "Sign in": "Sign in",
   "Sign up": "Sign up",
+  "Sign out": "Sign out",
   "Send login link": "Send login link",
   "Log in": "Log in",
   "Log out": "Log out",
@@ -75,7 +76,7 @@
   "Bookmarks": "Bookmarks",
   "Archive": "Archive",
   "Authors": "Authors",
-  "Tags": "Topics",
+  "Tags": "Tags",
   "No bookmarks found.": "No bookmarks found.",
   "Looks like you haven't saved any articles yet.": "Looks like you haven't saved any articles yet.",
 

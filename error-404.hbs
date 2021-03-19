@@ -27,7 +27,7 @@
     {{#get "posts" limit="3" include="tags,authors"}}
       {{#if posts}}
         <div class="row m-b-lg">
-          {{#foreach posts visibility="all"}}
+          {{#foreach posts}}
             <div class="col-xs-12 col-md-6 col-lg-4">
               {{> post-card class="h-100"}}
             </div>

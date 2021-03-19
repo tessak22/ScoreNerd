@@ -22,6 +22,7 @@
 
 .filter-btn {
   position: relative;
+  max-width: 100%;
 
   label {
     left: 0.75em;
@@ -41,6 +42,7 @@
 
 .filter-select {
   display: none;
+  max-width: 100%;
   height: 36px;
   padding: 6px var(--gap);
   padding-left: 2.5em;

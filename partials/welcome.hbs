@@ -1,63 +1,60 @@
-{{#if @labs.members}}
-  <div class="welcome flex items-center m-b-lg p-lg">
-    {{#if @member.paid}}
-      {{!-- Paid member content --}}
-      <a href="/account/" class="welcome__profile flex flex-cc" 
-        title="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}" 
-        aria-label="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}">
-        {{#if @member.avatar_image}}
-          <img src="{{@member.avatar_image}}"/>
-          <span class="name-letter">{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</span>
-        {{/if}}
-      </a>
-      <div class="welcome__content flex-1">
-        <h1 class="welcome__title fw-600">{{t "Welcome back"}}{{#if @member.name}}, {{@member.name}}{{/if}}!</h1>
-        <div class="welcome__descr m-b">
-          {{t "You're all set, but if you need any help, get in touch with us and we'd be happy to help."}}
-        </div>
-        <a href="/account/" class="btn btn--light btn--rounded btn--xs">{{t "Account"}}</a>
-      </div>
-
-    {{else if @member}}
-      {{!-- Free member content --}}
-      <a href="/account/" class="welcome__profile flex flex-cc" 
-        title="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}" 
-        aria-label="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}">
-        {{#if @member.avatar_image}}
-          <img src="{{@member.avatar_image}}" alt="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}"/>
-          <span class="name-letter">{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</span>
-        {{/if}}
-      </a>
-      <div class="welcome__content flex-1">
-        <h1 class="welcome__title fw-600">{{t "Welcome back"}}{{#if @member.name}}, {{@member.name}}{{/if}}!</h1>
-        <div class="welcome__descr m-b">
-          {{t "Unlock full access to see the entire library by subscribing to a paid plan."}}
-        </div>
-        <a href="/account/" class="btn btn--light btn--rounded btn--xs">{{t "Upgrade"}}</a>
-      </div>
-
-    {{else}} 
-      {{!-- Regular user content --}}
-      {{#if @site.cover_image}}
-        <a href="/membership/" class="welcome__profile flex flex-cc">
-          <img class="lazyload" 
-              data-srcset="{{img_url @site.cover_image size="xs"}} 100w,
-                      {{img_url @site.cover_image size="s"}} 300w"
-              srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-sizes="auto"
-              data-src="{{img_url @site.cover_image size="xs"}}"
-              src="{{img_url @site.cover_image size="xxs"}}"
-              alt="{{t "Join the community!"}}"/>
-        </a>
+<div class="welcome flex items-center m-b-lg p-lg">
+  {{#if @member.paid}}
+    {{!-- Paid member content --}}
+    <a href="/account/" class="welcome__profile flex flex-cc" 
+      title="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}" 
+      aria-label="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}">
+      {{#if @member.avatar_image}}
+        <img src="{{@member.avatar_image}}"/>
+        <span class="name-letter">{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</span>
       {{/if}}
-      <div class="welcome__content flex-1">
-        <h1 class="welcome__title fw-600">{{t "Feel confident about your credit"}}</h1>
-        <div class="welcome__descr m-b">
-          {{t "Subscribe to receive premium content in your inbox or work with us to help you improve your credit." sitetitle=@site.title}}
-        </div>
-        <a href="/membership/" class="btn btn--light btn--rounded btn--xs">{{t "Subscribe"}}</a>
-        <a href="/credit-improvement/" class="btn btn--light btn--rounded btn--xs">{{t "Improve My Credit"}}</a>
+    </a>
+    <div class="welcome__content flex-1">
+      <h1 class="welcome__title fw-600">{{t "Welcome back"}}{{#if @member.name}}, {{@member.name}}{{/if}}!</h1>
+      <div class="welcome__descr m-b">
+        {{t "You're all set, but if you need any help, get in touch with us and we'd be happy to help."}}
       </div>
+      <a href="/account/" class="btn btn--light btn--rounded btn--xs">{{t "Account"}}</a>
+    </div>
+
+  {{else if @member}}
+    {{!-- Free member content --}}
+    <a href="/account/" class="welcome__profile flex flex-cc" 
+      title="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}" 
+      aria-label="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}">
+      {{#if @member.avatar_image}}
+        <img src="{{@member.avatar_image}}" alt="{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}"/>
+        <span class="name-letter">{{#if @member.name}}{{@member.name}}{{else}}{{@member.email}}{{/if}}</span>
+      {{/if}}
+    </a>
+    <div class="welcome__content flex-1">
+      <h1 class="welcome__title fw-600">{{t "Welcome back"}}{{#if @member.name}}, {{@member.name}}{{/if}}!</h1>
+      <div class="welcome__descr m-b">
+        {{t "Unlock full access to see the entire library by subscribing to a paid plan."}}
+      </div>
+      <a href="/account/" class="btn btn--light btn--rounded btn--xs">{{t "Upgrade"}}</a>
+    </div>
+
+  {{else}} 
+    {{!-- Regular user content --}}
+    {{#if @site.cover_image}}
+      <a href="/membership/" class="welcome__profile flex flex-cc">
+        <img class="lazyload" 
+            data-srcset="{{img_url @site.cover_image size="xs"}} 100w,
+                    {{img_url @site.cover_image size="s"}} 300w"
+            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-sizes="auto"
+            data-src="{{img_url @site.cover_image size="xs"}}"
+            src="{{img_url @site.cover_image size="xxs"}}"
+            alt="{{t "Join the community!"}}"/>
+      </a>
     {{/if}}
-  </div>
-{{/if}}
+    <div class="welcome__content flex-1">
+      <h1 class="welcome__title fw-600">{{t "Join the community!"}}</h1>
+      <div class="welcome__descr m-b">
+        {{t "Sign up to {sitetitle} to get access to premium content." sitetitle=@site.title}}
+      </div>
+      <a href="/membership/" class="btn btn--light btn--rounded btn--xs">{{t "Learn more"}}</a>
+    </div>
+  {{/if}}
+</div>

@@ -1,25 +1,23 @@
 <aside class="sidebar">
   {{!-- Subscribe--}}
   {{#is "post"}}
-    {{#if @labs.members}}
-      {{#if @member.paid}}
-      {{else if @member}}
-        <div class="sidebar__section p-xs bg-gradient shadow">
-          <div class="sidebar__subscribe flex flex-col bg-default">
-            <h4 class="text-center text-xl text-acc-1">{{t "Premium Membership"}}</h4>
-            <div class="m-b text-acc-3">{{t "Unlock full access to see the entire library by subscribing to a paid plan."}}</div> 
-            <a href="/membership/" class="btn btn--primary btn--rounded btn--xs self-align-center">{{t "Upgrade"}}</a>
-          </div>
+    {{#if @member.paid}}
+    {{else if @member}}
+      <div class="sidebar__section p-xs bg-gradient shadow">
+        <div class="sidebar__subscribe flex flex-col bg-default">
+          <h4 class="text-center text-xl text-acc-1">{{t "Premium Membership"}}</h4>
+          <div class="m-b text-acc-3">{{t "Unlock full access to see the entire library by subscribing to a paid plan."}}</div> 
+          <a href="/membership/" class="btn btn--primary btn--rounded btn--xs self-align-center">{{t "Upgrade"}}</a>
         </div>
-      {{else}}
-        <div class="sidebar__section p-xs bg-gradient shadow">
-          <div class="sidebar__subscribe bg-default">
-            <h4 class="text-center text-acc-1">{{@site.title}} {{t "Newsletter"}}</h4>
-            <div class="m-b text-acc-3">{{t "Get the latest insights directly to your inbox!"}}</div>
-            {{> subscribe-form}}
-          </div>
+      </div>
+    {{else}}
+      <div class="sidebar__section p-xs bg-gradient shadow">
+        <div class="sidebar__subscribe bg-default">
+          <h4 class="text-center text-acc-1">{{@site.title}} {{t "Newsletter"}}</h4>
+          <div class="m-b text-acc-3">{{t "Get the latest insights directly to your inbox!"}}</div>
+          {{> subscribe-form}}
         </div>
-      {{/if}}
+      </div>
     {{/if}}
   {{/is}}
 
@@ -30,7 +28,7 @@
       <div class="sidebar__section shadow">
         <div class="section__title">{{t "Featured posts"}}</div>
         <span class="special-delimiter m-t m-b"></span>
-        {{#foreach featured  visibility="all"}}
+        {{#foreach featured}}
           <article class="sidebar-story">
             <h6 class="sidebar-story__title">
               <a href="{{url}}">{{{title}}}</a>
@@ -90,7 +88,7 @@
       <div class="sidebar__section shadow">   
         <div class="section__title">{{t "Latest posts"}}</div>   
         <span class="special-delimiter m-t m-b"></span>
-        {{#foreach latest  visibility="all"}}
+        {{#foreach latest}}
           <article class="sidebar-story">
             <h6 class="sidebar-story__title">
               <a href="{{url}}">{{{title}}}</a>
